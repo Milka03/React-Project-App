@@ -1,0 +1,600 @@
+#%RAML 1.0
+title: Flatly public
+baseUri: http://flatly-env.eba-pftr9jj2.eu-central-1.elasticbeanstalk.com/ext
+version: 1.0
+
+types:
+  customer:
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+        required: false
+      surname:
+        type: string
+        required: false
+      phoneNo:
+        type: string
+        required: false
+  address:
+    properties:
+      id:
+        type: integer
+      country:
+        type: string
+      city:
+        type: string
+      streetName:
+        type: string
+      postCode:
+        type: string
+      buildingNumber: 
+        type: string
+      flatNumber:
+        type: string
+        required: false
+  flat:
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      maxGuests:
+        type: integer
+      price:
+        type: integer
+      address:
+        type: address
+  flat_booking:
+    properties:
+      id:
+        type: integer
+  post_booking:
+    properties:
+      startDate:
+        type: date-only
+        example: 2020-05-02
+      endDate:
+        type: date-only
+        example: 2020-05-07
+      price:
+        type: integer
+        description: price for the whole reservation
+      noOfGuests:
+        type: integer
+      customer:
+        type: customer
+      flat:
+        type: flat_booking
+  booking:
+    properties:
+      startDate:
+        type: date-only
+        example: 2020-05-02
+      endDate:
+        type: date-only
+        example: 2020-05-07
+      price:
+        type: integer
+        description: price for the whole reservation
+      noOfGuests:
+        type: integer
+      customer:
+        type: customer
+      flat:
+        type: flat
+      isActive:
+        type: boolean
+        description: flag incicating whether the booking is active
+
+
+/bookings:
+  get:
+    description: get all flat bookings, by default without inactive bookings
+    queryParameters:
+      apikey:
+        type: string
+        description: authentication key
+      size:
+        type: integer
+        description: size of a page, default is 10
+        required: false
+      page:
+        type: integer
+        description: page number, default is 0
+        required: false
+      sort:
+        type: string
+        description: name of a field by which the data should be sorted, more than one can entered, default is booking id
+        required: false
+      field.dir:
+        type: string
+        description: direction of sorting by a given field - asc or desc
+        required: false
+      name:
+        type: string
+        description: filter for bookings made for flats which name includes <value>
+        required: false
+      flat.id:
+        type: string
+        description: filter for bookings made for flat with given id
+        required: false
+      customer.id:
+        type: string
+        description: filter for bookings made by a customer with given id
+        required: false
+      city:
+        type: string
+        description: filter for bookings made for flats in city <value>
+        required: false
+      country:
+        type: string
+        description: filter for bookings made for flats in country <value>
+        required: false
+      dateFrom:
+        type: date-only
+        description: filter for bookings starting at least on <value>
+        required: false
+        example: 2020-05-02
+      dateTo:
+        type: date-only
+        description: filter for bookings ending at most on <value>
+        required: false 
+        example: 2020-05-02
+      omit_inactive:
+        type: boolean
+        description: flag indicating to include inactive bookings in the search
+        required: false
+        default: true
+    responses:
+      200:
+        description: list of bookings in content array, paging in pageable object
+        body:
+          json/application:
+            type: booking[]
+            example: {
+              "content": [
+                  {
+                      "id": 1,
+                      "startDate": "2020-01-18",
+                      "endDate": "2020-01-22",
+                      "price": 4,
+                      "noOfGuests": 5,
+                      "customer": {
+                          "id": 1
+                      },
+                      "flat": {
+                          "id": 1,
+                          "name": "chatka",
+                          "maxGuests": 20,
+                          "price": 1,
+                          "flatType": "chatkapuchatka",
+                          "address": {
+                              "id": 1,
+                              "country": "Poland",
+                              "city": "Szczecin",
+                              "streetName": "mojastara",
+                              "postCode": "13-420",
+                              "buildingNumber": "13",
+                              "flatNumber": "13",
+                              "flat": null
+                          }
+                      },
+                      "active": false
+                  },
+                  {
+                      "id": 2,
+                      "startDate": "2020-01-23",
+                      "endDate": "2020-01-26",
+                      "price": 3,
+                      "noOfGuests": 3,
+                      "customer": {
+                          "id": 1
+                      },
+                      "flat": {
+                          "id": 1,
+                          "name": "chatka",
+                          "maxGuests": 20,
+                          "price": 1,
+                          "flatType": "chatkapuchatka",
+                          "address": {
+                              "id": 1,
+                              "country": "Poland",
+                              "city": "Szczecin",
+                              "streetName": "mojastara",
+                              "postCode": "13-420",
+                              "buildingNumber": "13",
+                              "flatNumber": "13",
+                              "flat": null
+                          },
+                        "active": false
+                      }
+                  },
+                  {
+                      "id": 3,
+                      "startDate": "2020-01-30",
+                      "endDate": "2020-02-22",
+                      "price": 50,
+                      "noOfGuests": 5,
+                      "customer": {
+                          "id": 1
+                      },
+                      "flat": {
+                          "id": 1,
+                          "name": "chatka",
+                          "maxGuests": 20,
+                          "price": 1,
+                          "flatType": "chatkapuchatka",
+                          "address": {
+                              "id": 1,
+                              "country": "Poland",
+                              "city": "Szczecin",
+                              "streetName": "mojastara",
+                              "postCode": "13-420",
+                              "buildingNumber": "13",
+                              "flatNumber": "13",
+                              "flat": null
+                          }
+                      },
+                      "active": false
+                  },
+                  {
+                      "id": 4,
+                      "startDate": "2020-01-30",
+                      "endDate": "2020-02-22",
+                      "price": 50,
+                      "noOfGuests": 5,
+                      "customer": {
+                          "id": 1
+                      },
+                      "flat": {
+                          "id": 1,
+                          "name": "chatka",
+                          "maxGuests": 20,
+                          "price": 1,
+                          "flatType": "chatkapuchatka",
+                          "address": {
+                              "id": 1,
+                              "country": "Poland",
+                              "city": "Szczecin",
+                              "streetName": "mojastara",
+                              "postCode": "13-420",
+                              "buildingNumber": "13",
+                              "flatNumber": "13",
+                              "flat": null
+                          }
+                      },
+                      "active": false
+                  }
+              ],
+              "pageable": {
+                  "sort": {
+                      "sorted": false,
+                      "unsorted": true,
+                      "empty": true
+                  },
+                  "offset": 0,
+                  "pageNumber": 0,
+                  "pageSize": 10,
+                  "unpaged": false,
+                  "paged": true
+              },
+              "totalElements": 10,
+              "totalPages": 1,
+              "last": true,
+              "number": 0,
+              "size": 10,
+              "sort": {
+                  "sorted": false,
+                  "unsorted": true,
+                  "empty": true
+              },
+              "numberOfElements": 10,
+              "first": true,
+              "empty": false
+          }
+
+  post:
+    description: create new bookings
+    queryParameters:  
+      apikey:
+        type: string
+        description: authentication key
+    body:
+      json/application:
+        description: list of bookings
+        type: post_booking
+        example: {
+              "startDate": "2020-03-07",
+              "endDate": "2020-03-15",
+              "price": 50,
+              "noOfGuests": 5,
+              "customer": {
+                  "id": 1
+              },
+              "flat": {
+                  "id": 1
+              }
+          }
+    responses:
+      200:
+        description: saved booking details
+        body:
+          json/application:
+            type: booking
+            example: {
+            "id": 1,
+            "startDate": "2020-01-18",
+            "endDate": "2020-01-22",
+            "price": 4,
+            "noOfGuests": 5,
+            "customer": {
+                "id": 1
+            },
+            "flat": {
+                "id": 1,
+                "name": "chatka",
+                "maxGuests": 20,
+                "price": 1,
+                "flatType": "chatkapuchatka",
+                "address": {
+                    "id": 1,
+                    "country": "Poland",
+                    "city": "Szczecin",
+                    "streetName": "mojastara",
+                    "postCode": "13-420",
+                    "buildingNumber": "13",
+                    "flatNumber": "13",
+                    "flat": null
+                },
+            "active": false
+            }
+        }
+      405:
+        description: empty booking object
+        body:
+          json/application:
+            type: object
+            example: {
+              "id": 0,
+              "startDate": null,
+              "endDate": null,
+              "price": 0,
+              "noOfGuests": 0,
+              "customerId": 0,
+              "flat": null,
+              "customer": {
+                  "id": 0,
+                  "name": "Krzysztof",
+                  "surname": "Jarzyna",
+                  "phoneNo": "555 555 555"
+              },
+              "active": false
+          }
+
+
+  /{bookingId}:
+    delete:
+      description: cancel a booking
+      queryParameters:
+        apikey:
+          type: string
+          description: authentication key
+      responses:
+        200:
+          body:
+            json/application:
+              type: string
+              example: Successfully canceled booking with id 234
+        405:
+          body:
+            json/application:
+              type: string
+              example: Cannot cancel booking 234 - it has already started
+    get:
+      description: get bookings details
+      queryParameters:
+        apikey:
+          type: string
+          description: authentication key
+      responses:
+        200:
+          body:
+            json/application:
+              type: booking
+              example: {
+                "id": 54,
+                "startDate": "2020-03-07",
+                "endDate": "2020-03-15",
+                "price": 50,
+                "noOfGuests": 5,
+                "customerId": 2,
+                "flat": {
+                    "id": 1,
+                    "name": "My flat",
+                    "maxGuests": 4,
+                    "price": 600,
+                    "flatType": "Apartment",
+                    "address": {
+                        "id": 40,
+                        "country": "Poland",
+                        "city": "Gdynia",
+                        "streetName": "Miodowa",
+                        "postCode": "80-260",
+                        "buildingNumber": "4",
+                        "flatNumber": "3",
+                        "flat": null
+                    },
+                    "images": null
+                },
+                "customer": {
+                    "id": 0
+                },
+                "active": true
+            }
+
+/flats:
+  get:
+    description: get a list of flats with one header image and paging info (if there are any images)
+    queryParameters:
+      apikey:
+        type: string
+        description: authentication key
+      size:
+        type: integer
+        description: size of a page, default is 10
+        required: false
+      page:
+        type: integer
+        description: page number, default is 0
+        required: false
+      sort:
+        type: string
+        description: name of a field by which the data should be sorted, more than one can entered, default is flat id
+        required: false
+      field.dir:
+        type: string
+        description: direction of sorting by a given field - asc or desc
+        required: false
+      name:
+        type: string
+        description: filter for flats with <name> in their name
+        required: false
+      city:
+        type: string
+        description: filter for flats in <city>
+        required: false
+      country:
+        type: string
+        description: filter for flats in <country>
+        required: false
+      guestsFrom:
+        type: integer
+        description: filter for flats with minumal number of guests, inclusive
+        required: false
+      guestsTo:
+        type: integer
+        description: filter for flats with maximal number of guests, inclusive
+        required: false
+      priceFrom:
+        type: integer
+        description: filter for flats with minumal price, inclusive
+        required: false      
+      priceTo:
+        type: integer
+        description: filter for flats with maximal price, inclusive
+        required: false      
+    responses:
+      200:
+        body:
+          json/application:
+            description: content array contains the flats, pageable object contains information about paging 
+            type: flat[]
+            example: {
+              "content": [
+                  {
+                      "id": 1,
+                      "name": "My new flat",
+                      "maxGuests": 8,
+                      "price": 900,
+                      "flatType": "Apartment",
+                      "address": {
+                          "id": 2,
+                          "country": "Poland",
+                          "city": "Gdansk",
+                          "streetName": "Wolna",
+                          "postCode": "80-160",
+                          "buildingNumber": "56",
+                          "flatNumber": "1",
+                          "flat": null
+                      },
+                      "images": [
+                          {
+                              "id": "bc443da7-9860-4fbe-a4d2-fda0909d3755",
+                              "fileName": "00023.jpg",
+                              "fileType": "image/jpeg",
+                              "flatId": 1,
+                              "data": "[binary data of the image]"
+                          }
+                      ]
+                  }
+              ],
+              "pageable": {
+                  "sort": {
+                      "sorted": false,
+                      "unsorted": true,
+                      "empty": true
+                  },
+                  "offset": 0,
+                  "pageNumber": 0,
+                  "pageSize": 1,
+                  "unpaged": false,
+                  "paged": true
+              },
+              "totalPages": 7,
+              "totalElements": 7,
+              "last": false,
+              "size": 1,
+              "number": 0,
+              "sort": {
+                  "sorted": false,
+                  "unsorted": true,
+                  "empty": true
+              },
+              "numberOfElements": 1,
+              "first": true,
+              "empty": false }
+  /{flatId}:
+    get:
+      description: get a flat with all images
+      uriParamters:
+        flatId:
+          type: integer
+          description: id of a flat
+      queryParameters:
+        apikey:
+          type: string
+          description: authentication key
+      responses:
+        200:
+          body:
+            json/application:
+              example: {
+                "id": 1,
+                "name": "My flat",
+                "maxGuests": 4,
+                "price": 600,
+                "flatType": "Apartment",
+                "address": {
+                    "id": 7,
+                    "country": "Poland",
+                    "city": "Gdynia",
+                    "streetName": "Miodowa",
+                    "postCode": "80-260",
+                    "buildingNumber": "4",
+                    "flatNumber": "3",
+                    "flat": null
+                },
+                "images": [
+                    {
+                        "id": "52d389b7-38f1-43b5-91d6-be9167940f16",
+                        "fileName": "00017.jpg",
+                        "fileType": "image/jpeg",
+                        "flatId": 1,
+                        "data": [binary data]
+                    },
+                    {
+                        "id": "5752662f-bb11-4bd3-8f92-a4599398ad55",
+                        "fileName": "00014.jpg",
+                        "fileType": "image/jpeg",
+                        "flatId": 1,
+                        "data": [binary data]
+                    }
+                ]
+            }
+
+
+            
+              
+              

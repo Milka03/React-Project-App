@@ -1,0 +1,70 @@
+.FlatsList {
+  padding: 25px 50px;
+}
+
+.FlatsTable {
+  margin-top: 50px;
+  border-radius: 50px;
+  text-align: center;    
+}
+
+.FlatsTable > thead {
+  background: #a73737;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #7a2828, #a73737);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #7a2828, #a73737); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
+  border-top: none;
+}
+
+.FlatsTable > thead > tr >  th > button {
+  background: none;
+  font: inherit;
+  color: white;
+  border: none;
+}
+
+.FlatsRow {
+  background: #eacda3;  
+  background: -webkit-linear-gradient(to right, #d6ae7b, #eacda3); 
+  background: linear-gradient(to right, #d6ae7b, #eacda3);
+} 
+
+.FlatsForm label {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 7px; 
+}
+.GreenButton {
+  background-color: #0f9b0f !important;
+  border-style: none !important;
+  width: 80px;
+  margin: 0px 0px 0px 5px;
+}
+.BlueButton {
+  border-style: none !important;
+  width: 80px;
+  margin: 0px 0px 0px 5px;
+}
+.RedButton {
+  background-color: #8E0E00 !important;  /* fallback for old browsers */
+  border-style: none !important;
+  width: 80px;
+  margin: 0px 0px 0px 5px;
+}
+.LargeBlueButton {
+  border-style: none !important;
+  width: 400px;
+  margin: 10px 0px 0px 0px;
+}
+
+.FlatRowCenter {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0px 0px 0px;
+}
+.FlatRowRight {
+  display: flex; 
+  align-items: flex-end;
+  justify-content: flex-end;
+}

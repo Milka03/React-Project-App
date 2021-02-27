@@ -1,0 +1,15 @@
+.BookingDetails {
+    border: 2px solid black;
+    padding: 10px;
+    margin: 10px;
+}
+
+.BookingDetails > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 300px;
+}
+
+.BookingDetails > ul > li {font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif}
+.BookingDetails > ul > ul > li {font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif}

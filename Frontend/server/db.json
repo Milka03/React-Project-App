@@ -1,0 +1,132 @@
+{
+  "flats": [
+    {
+      "id": 1,
+      "name": "Pineska-Tulipan",
+      "maxGuests": 3,
+      "price": 0,
+      "address": {
+        "country": "Poland",
+        "city": "Warsaw",
+        "streetName": "Uniwersytecka",
+        "buildingNumberail": "5",
+        "postCode": "02-036",
+        "flatNumber": "5"
+      }
+    },
+    {
+      "id": 1610843665525,
+      "name": "Akademicka Dom",
+      "maxGuests": 5,
+      "price": 600,
+      "address": {
+        "country": "Poland",
+        "city": "Warszawa",
+        "streetName": "Akademicka",
+        "postCode": "02-038",
+        "buildingNumber": "4524",
+        "flatNumber": "453453"
+      }
+    },
+    {
+      "id": 1611389413158,
+      "name": "Rose",
+      "maxGuests": 1,
+      "price": 500,
+      "flatType": "",
+      "address": {
+        "country": "Germany",
+        "city": "Munich",
+        "streetName": "Akademicka",
+        "postCode": "02-038",
+        "buildingNumber": "",
+        "flatNumber": ""
+      },
+      "images": []
+    },
+    {
+      "id": "09fkm1o2oijs18hiujwj09d2bu",
+      "name": "U Grażyny",
+      "flatType": "Apartment",
+      "maxGuests": 6,
+      "pricePerDay": 35,
+      "address": {
+        "country": "Poland",
+        "city": "Zakopane",
+        "streetName": "Góralska",
+        "postCode": "00-100",
+        "buildingNumber": 25,
+        "flatNumber": 3
+      }
+    }
+  ],
+  "bookings": [
+    {
+      "id": "5dc9bdc63d2a39982fbf83d8",
+      "customer": {
+        "id": "asfk123dc9bdc6d019210asd3d",
+        "name": "Jan",
+        "surname": "Kowalski",
+        "phoneNo": "+48 555 555 555"
+      },
+      "noOfGuests": 2,
+      "bookingPrice": 245,
+      "startDate": "14.08.2020",
+      "endDate": "21.08.2020",
+      "flat": {
+        "id": "1",
+        "name": "U Grażyny",
+        "flatType": "Apartment",
+        "maxGuests": 6,
+        "pricePerDay": 35,
+        "address": {
+          "country": "Poland",
+          "city": "Zakopane",
+          "streetName": "Góralska",
+          "postCode": "00-100",
+          "buildingNumber": 25,
+          "flatNumber": 3
+        }
+      }
+    },
+    {
+      "id": "5dc9bdc6f0c10cec4f579a65",
+      "customer": {
+        "id": "asfk123dc9bdc6d019210asd3d",
+        "name": "Michał",
+        "surname": "Kolejarz",
+        "phoneNo": "+48 666 666 666"
+      },
+      "noOfGuests": 3,
+      "bookingPrice": 350,
+      "startDate": "10.09.2020",
+      "endDate": "17.09.2020",
+      "flat": {
+        "id": "asfk112310918hiujwj09d2bu",
+        "name": "Złoty Taras",
+        "flatType": "Apartment",
+        "maxGuests": 6,
+        "pricePerDay": 50,
+        "address": {
+          "country": "Poland",
+          "city": "Warsaw",
+          "streetName": "Czerwona",
+          "postCode": "01-020",
+          "buildingNumber": 120,
+          "flatNumber": 9
+        }
+      }
+    }
+  ],
+  "cityOptions": [
+    "Warsaw",
+    "Moscow",
+    "London"
+  ],
+  "countryOptions": [
+    "Poland",
+    "England",
+    "Russia",
+    "Arstotzka"
+  ]
+}

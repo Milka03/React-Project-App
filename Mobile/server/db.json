@@ -1,0 +1,232 @@
+[
+      {
+        "id": "5dc9bdc63d2a39982fbf83d8",
+        "isAvailable": true,
+        "price": 77,
+        "flatName": "MIRACULA",
+        "maxGuestNo": 10,
+        "country": "France",
+        "city": "Cannes",
+        "address": "unpronouncable street 90, 40"
+      },
+      {
+        "id": "5dc9bdc6f0c10cec4f579a65",
+        "isAvailable": false,
+        "price": 115,
+        "flatName": "VURBO Luxury Resort",
+        "maxGuestNo": 5,
+        "country": "Polska",
+        "city": "Sopot",
+        "address": "Luksusowa 8, 15-151"
+      },
+      {
+        "id": "5dc9bdc6cd6f618976e00dfa",
+        "isAvailable": true,
+        "price": 26,
+        "flatName": "Chata u Krasnala",
+        "maxGuestNo": 7,
+        "country": "Polska",
+        "city": "Zakopane",
+        "address": "Tania 8, 06-060"
+      },
+      {
+        "id": "5dc9bdc6b0001d85ead79e47",
+        "isAvailable": false,
+        "price": 60,
+        "flatName": "Poland House",
+        "maxGuestNo": 15,
+        "country": "Polska",
+        "city": "Warszawa",
+        "address": "Centralna 8, 01-000"
+      },
+      {
+        "id": "5dc9bdc675d0721b2d9812a4",
+        "isAvailable": true,
+        "price": 26,
+        "flatName": "Tani Hostel",
+        "maxGuestNo": 8,
+        "country": "Polska",
+        "city": "Warszawa",
+        "address": "Malinowa 8, 05-444"
+      },
+      {
+        "id": "5dc9bdc6e2b02c719ed956a7",
+        "isAvailable": false,
+        "price": 35,
+        "flatName": "TALENDULA",
+        "maxGuestNo": 12,
+        "country": "Polska",
+        "city": "Zakopane",
+        "address": "Liniowa 4, 09-788"
+      },
+      {
+        "id": "5dc9bdc69ba84395b4ca5705",
+        "isAvailable": true,
+        "price": 39,
+        "flatName": "Quality hostel",
+        "maxGuestNo": 18,
+        "country": "Germany",
+        "city": "Berlin",
+        "address": "Schmeterling 5, 15"
+      },
+      {
+        "id": "5dc9bdc6fb9ede50b4c65fed",
+        "isAvailable": true,
+        "price": 80,
+        "flatName": "SPA&Wellness Resort",
+        "maxGuestNo": 30,
+        "country": "Polska",
+        "city": "Ciechocinek",
+        "address": "Konwaliowa 14, 09-333"
+      },
+      {
+        "id": "5dc9bdc6485ccfcec093eb67",
+        "isAvailable": false,
+        "price": 50,
+        "flatName": "Mcdonald Hotel",
+        "maxGuestNo": 4,
+        "country": "Polska",
+        "city": "Ciechocinek",
+        "address": "Koralowa 15, 09-309"
+      },
+      {
+        "id": "5dc9bdc6d54eb99cb821fb5f",
+        "isAvailable": false,
+        "price": 150,
+        "flatName": "Marriott",
+        "maxGuestNo": 100,
+        "country": "Polska",
+        "city": "Warszawa",
+        "address": "Marszałkowska 9, 01-111"
+      },
+      {
+        "id": "5dc9bdc64424815d04e10c50",
+        "isAvailable": true,
+        "price": 80,
+        "flatName": "Bettie Hotel",
+        "maxGuestNo": 30,
+        "country": "Germany",
+        "city": "Berlin",
+        "address": "Nine 9, 11"
+      },
+      {
+        "id": "5dc9bdc68e268a789771e9da",
+        "isAvailable": false,
+        "price": 30,
+        "flatName": "Trudy House",
+        "maxGuestNo": 50,
+        "country": "France",
+        "city": "Cannes",
+        "address": "xxxx 43, 0909"
+      },
+      {
+        "id": "5dc9bdc6b62ea8498f1e2da4",
+        "isAvailable": true,
+        "price": 120,
+        "flatName": "Raquel Hotel",
+        "maxGuestNo": 22,
+        "country": "France",
+        "city": "Paris",
+        "address": "Rue YY 90, 6767"
+      },
+      {
+        "id": "5dc9bdc6759d1f047616ed7e",
+        "isAvailable": true,
+        "price": 270,
+        "flatName": "EXOSIS Resort",
+        "maxGuestNo": 90,
+        "country": "Polska",
+        "city": "Sopot",
+        "address": "Droga 33, 09-099"
+      },
+      {
+        "id": "5dc9bdc669395dcbe481c1b5",
+        "isAvailable": false,
+        "price": 67,
+        "flatName": "Hotel B",
+        "maxGuestNo": 40,
+        "country": "Germany",
+        "city": "Berlin",
+        "address": "Idk Street 20, 8888"
+      },
+      {
+        "id": "5dc9bdc682e259cc7078b891",
+        "isAvailable": true,
+        "price": 97,
+        "flatName": "Góralska Chata",
+        "maxGuestNo": 50,
+        "country": "Polska",
+        "city": "Zakopane",
+        "address": "Płaska 20, 01-001"
+      },
+      {
+        "id": "5dc9bdc60e75c8f425dfe150",
+        "isAvailable": true,
+        "price": 90,
+        "flatName": "Silver Dragon Resort",
+        "maxGuestNo": 14,
+        "country": "Polska",
+        "city": "Szczecin",
+        "address": "Wolska 80, 04-000"
+      },
+      {
+        "id": "5dc9bdc65720bf0a00dc0ca4",
+        "isAvailable": false,
+        "price": 99,
+        "flatName": "Hotel Rosanna",
+        "maxGuestNo": 70,
+        "country": "Polska",
+        "city": "Zakopane",
+        "address": "Szybka 7, 06-655"
+      },
+      {
+        "id": "5dc9bdc63d783442fbd22b38",
+        "isAvailable": true,
+        "price": 140,
+        "flatName": "Maricela Luxury Appartments",
+        "maxGuestNo": 70,
+        "country": "Polska",
+        "city": "Warszawa",
+        "address": "Chmielna 10, 00-100"
+      },
+      {
+        "isAvailable": true,
+        "price": 40,
+        "flatName": "Hotel A",
+        "maxGuestNo": 33,
+        "country": "Polska",
+        "city": "Lublin",
+        "address": "Majowa 15, 90-222",
+        "id": "7nUujVr"
+      },
+      {
+        "id": "5555555555555",
+        "isAvailable": true,
+        "price": 110,
+        "flatName": "Marina Resort",
+        "maxGuestNo": 80,
+        "country": "Polska",
+        "city": "Sopot",
+        "address": "Druga 22, 07-444"
+      },
+      {
+        "isAvailable": false,
+        "price": 90,
+        "flatName": "Holly Resort",
+        "maxGuestNo": 55,
+        "country": "Germany",
+        "city": "Frankfurt",
+        "address": "Sth 98, 0000",
+        "id": "2hLH2F6"
+      },
+      {
+        "isAvailable": true,
+        "price": 65,
+        "flatName": "DEKOR Hostel",
+        "maxGuestNo": 15,
+        "country": "Polska",
+        "city": "Brwilno",
+        "address": "Martwa 17, 09-888",
+        "id": "_x_U44V"
+      }
+]
